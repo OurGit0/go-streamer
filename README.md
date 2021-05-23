@@ -14,7 +14,7 @@ Will attempt to build the following features:
 - The log protoype accepts json in the following format `{"record": {"value": "<base64 encoded value>"}}`
 - you can use curl to append a message to the log with a POST request, and retrieving a message by providing an offset in a GET request
 
-###Example 
+### Example 
 `$ curl --request POST localhost:8080 --data '{"record": {"value": "ewogICJ1c2VybmFtZSI6InNhbnRvc2hwYXBhIiwKICAiYWdlIjogIjI5IiwKICAgInRpbWV6b25lIjogImlzdCIuCn0="}}'` for appending a message to the log. this returns json encoded offset value if there are no errors. 
 
 `$ curl --request GET localhost:8080 --data '{"Offset":0}'` to retrieve the first entry in the log, which returns a json encoded log value with the offset.
